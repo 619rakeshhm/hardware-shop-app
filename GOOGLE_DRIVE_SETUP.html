@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saving Your Data to Google Drive — Dukaan Desk</title>
+  <style>
+    :root {
+      --bg: #f3f5f1;
+      --surface: #ffffff;
+      --ink: #18211f;
+      --muted: #64706b;
+      --line: #dfe4df;
+      --brand: #1f6f5b;
+      --brand-dark: #15503f;
+      --brand-soft: #e8f4ef;
+      --accent: #bd7134;
+      --accent-soft: #fff4e8;
+      --danger: #b53b30;
+      --warn: #a76b00;
+      --good: #227045;
+      --shadow: 0 18px 45px rgba(24, 33, 31, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #edf4ef 0, rgba(237, 244, 239, 0) 320px), var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 32px 20px 80px; }
+    .hero {
+      background: linear-gradient(135deg, var(--brand) 0, var(--brand-dark) 100%);
+      color: #f7faf8;
+      border-radius: 18px;
+      padding: 32px 34px;
+      box-shadow: var(--shadow);
+    }
+    .hero .badge {
+      display: inline-block; background: rgba(255,255,255,0.16); color: #eafff6;
+      font-size: 13px; font-weight: 600; letter-spacing: .3px;
+      padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; }
+    .hero p { margin: 0; color: #d9e4df; }
+    .back { display: inline-block; margin-bottom: 18px; color: var(--brand); text-decoration: none; font-weight: 600; }
+    .back:hover { text-decoration: underline; }
+    .note {
+      border-left: 4px solid var(--brand); background: var(--brand-soft);
+      padding: 12px 16px; border-radius: 8px; margin: 22px 0; color: #1c3b33;
+    }
+    .note.warn { border-left-color: var(--warn); background: #fff9eb; color: #5c4300; }
+    .note.tip  { border-left-color: var(--accent); background: var(--accent-soft); color: #6a3f12; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+      padding: 24px 28px; margin: 22px 0; box-shadow: 0 8px 24px rgba(24,33,31,0.05);
+    }
+    h2 { font-size: 21px; margin: 34px 0 6px; color: var(--brand-dark); }
+    h3 { font-size: 17px; margin: 20px 0 6px; }
+    ol, ul { margin: 8px 0 8px; padding-left: 22px; }
+    li { margin: 6px 0; }
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 50%; background: var(--brand);
+      color: #fff; font-size: 14px; font-weight: 700; margin-right: 8px;
+    }
+    code, kbd {
+      background: #eef2ef; border: 1px solid var(--line); border-radius: 6px;
+      padding: 1px 6px; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 14px;
+    }
+    em { color: var(--accent); font-style: normal; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: #f1fbf5; color: var(--brand-dark); }
+    .ok { color: var(--good); font-weight: 700; }
+    footer { margin-top: 40px; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← Back to the app</a>
+
+    <div class="hero">
+      <span class="badge">Dukaan Desk</span>
+      <h1>Saving Your Data to Google Drive</h1>
+      <p>Automatic cloud backup that still works offline. The app saves instantly to a file on your PC, and Google Drive syncs that file to the cloud in the background.</p>
+    </div>
+
+    <div class="note">
+      <strong>Works in:</strong> Google Chrome, Microsoft Edge, or Brave.
+      (Firefox and Safari can’t auto-save to a drive — use <em>Download Backup</em> there.)
+    </div>
+
+    <h2>One-time setup <span style="color:var(--muted);font-size:15px;font-weight:400;">(about 5 minutes)</span></h2>
+
+    <div class="card">
+      <h3><span class="step-num">1</span>Install Google Drive for Desktop</h3>
+      <ol>
+        <li>Go to <code>https://www.google.com/drive/download/</code></li>
+        <li>Download and install <strong>Google Drive for Desktop</strong>.</li>
+        <li>Sign in with the Google account you want your shop data saved to.</li>
+        <li>You’ll see a new drive in <strong>File Explorer</strong>, usually <code>Google Drive (G:)</code> with a <code>My Drive</code> folder.</li>
+      </ol>
+      <div class="note tip">
+        <strong>Tip:</strong> No <code>G:</code> drive? Open the Drive icon in the system tray (bottom-right) →
+        gear → <strong>Preferences</strong> → enable file streaming.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="step-num">2</span>Make a folder for the shop data <span style="color:var(--muted);font-weight:400;">(optional)</span></h3>
+      <ol>
+        <li>Open <strong>File Explorer → Google Drive (G:) → My Drive</strong>.</li>
+        <li>Create a folder named <code>Dukaan Desk</code>.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3><span class="step-num">3</span>Point the app at a file in Google Drive</h3>
+      <ol>
+        <li>Open the app (<code>index.html</code>) in Chrome or Edge.</li>
+        <li>Go to <strong>Settings → Data</strong>.</li>
+        <li>Click <em>Save To Drive</em>.</li>
+        <li>Navigate to <strong>Google Drive (G:) → My Drive → Dukaan Desk</strong>.</li>
+        <li>Keep the suggested name and click <strong>Save</strong>.</li>
+        <li>The status should read <strong>“Selected: …json. Auto-save is on.”</strong> and the top pill should turn green: <strong>“Drive auto-save on.”</strong></li>
+      </ol>
+      <p class="ok">✅ That’s it — every bill, stock change, and ledger entry now saves automatically and syncs to the cloud.</p>
+    </div>
+
+    <h2>Daily use</h2>
+    <ul>
+      <li>Just use the app normally — <strong>you don’t need to click anything to save.</strong></li>
+      <li>The green <strong>“Drive auto-save on”</strong> pill confirms it’s connected.</li>
+      <li>If it ever shows <strong>“Drive auto-save off”</strong> or <strong>“Auto-save paused”</strong>, click <em>Set Auto-Save</em> (or <em>Save Again</em>) and re-select your file. This can happen after the browser’s been closed a while — it’s normal.</li>
+    </ul>
+
+    <h2>Opening your data on another PC</h2>
+    <ol>
+      <li>Install <strong>Google Drive for Desktop</strong> on the second PC, sign in with the <strong>same account</strong>, and wait for it to sync.</li>
+      <li>Copy the app folder (with <code>index.html</code>) to that PC and open it.</li>
+      <li>Go to <strong>Settings → Data → Open Data File</strong> and pick your <code>…data….json</code> from the Google Drive folder.</li>
+      <li>Click <em>Set Auto-Save</em> so changes on this PC sync back too.</li>
+    </ol>
+    <div class="note warn">
+      <strong>Use one PC at a time.</strong> If two PCs edit the same file at once, Google may create a
+      “conflicted copy.” For a single shop counter this is rarely an issue — just don’t edit on two machines simultaneously.
+    </div>
+
+    <h2>Extra safety (recommended)</h2>
+    <p>Once a week, click <strong>Settings → Data → Download Backup</strong> and keep that <code>.json</code> on a USB stick or second folder. It’s a manual snapshot you can <em>Restore Backup</em> from if anything ever goes wrong with the synced file.</p>
+
+    <h2>Troubleshooting</h2>
+    <table>
+      <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>No <code>G:</code> / Google Drive folder appears</td><td>Drive tray icon → Preferences → enable file streaming; restart the PC</td></tr>
+        <tr><td>Pill says “Drive auto-save off”</td><td>Settings → Data → <strong>Set Auto-Save</strong>, pick your file again</td></tr>
+        <tr><td>“Auto-save paused. Click Set Auto-Save to reconnect.”</td><td>Click <strong>Set Auto-Save</strong> and allow file access when asked</td></tr>
+        <tr><td>File picker won’t open / button does nothing</td><td>You’re likely in Firefox/Safari — use Chrome or Edge, or use <strong>Download Backup</strong></td></tr>
+        <tr><td>Data didn’t appear on the second PC</td><td>Wait for Google Drive to finish syncing, then <strong>Open Data File</strong></td></tr>
+        <tr><td>Confirm it’s syncing</td><td>In File Explorer the file shows a green check (synced) rather than a sync arrow</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How it works</h2>
+    <p>The app saves to a normal file on your PC using your browser’s secure file access. That file lives inside the Google Drive folder, so Google Drive for Desktop syncs every change up to the cloud automatically — giving you cloud backup while the app stays fully offline-capable.</p>
+
+    <footer>Dukaan Desk · Google Drive backup guide</footer>
+  </div>
+</body>
+</html>
